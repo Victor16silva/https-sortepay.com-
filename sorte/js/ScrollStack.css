@@ -1,0 +1,285 @@
+/* ScrollStack React Component Styles */
+
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+.scroll-stack-inner {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+
+.scroll-stack-card {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  will-change: transform, filter;
+  transform-origin: top center;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  
+  /* Smooth transitions for non-scroll transforms */
+  transition: box-shadow 0.3s ease;
+}
+
+.scroll-stack-card:hover {
+  box-shadow: 
+    0 8px 40px rgba(0, 0, 0, 0.15),
+    0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Spacer element to allow last card to unpin */
+.scroll-stack-end {
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Card content styling */
+.scroll-stack-card h1,
+.scroll-stack-card h2,
+.scroll-stack-card h3 {
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.scroll-stack-card h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.scroll-stack-card h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.scroll-stack-card h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.scroll-stack-card p {
+  margin-bottom: 1rem;
+  color: #666;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.scroll-stack-card:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Performance optimizations */
+.scroll-stack-scroller *,
+.scroll-stack-scroller *::before,
+.scroll-stack-scroller *::after {
+  box-sizing: border-box;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .scroll-stack-card {
+    min-height: 50vh;
+    padding: 1.5rem;
+  }
+  
+  .scroll-stack-card h1 {
+    font-size: 2rem;
+  }
+  
+  .scroll-stack-card h2 {
+    font-size: 1.75rem;
+  }
+  
+  .scroll-stack-card h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-stack-scroller {
+    height: 100vh;
+  }
+  
+  .scroll-stack-card {
+    min-height: 70vh;
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  
+  .scroll-stack-card h1 {
+    font-size: 1.75rem;
+  }
+  
+  .scroll-stack-card h2 {
+    font-size: 1.5rem;
+  }
+  
+  .scroll-stack-card h3 {
+    font-size: 1.125rem;
+  }
+  
+  .scroll-stack-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-stack-card {
+    min-height: 80vh;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .scroll-stack-card h1 {
+    font-size: 1.5rem;
+  }
+  
+  .scroll-stack-card h2 {
+    font-size: 1.25rem;
+  }
+  
+  .scroll-stack-card h3 {
+    font-size: 1rem;
+  }
+  
+  .scroll-stack-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .scroll-stack-card {
+    background: #1a1a1a;
+    color: #ffffff;
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.3),
+      0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .scroll-stack-card:hover {
+    box-shadow: 
+      0 8px 40px rgba(0, 0, 0, 0.4),
+      0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .scroll-stack-card h1,
+  .scroll-stack-card h2,
+  .scroll-stack-card h3 {
+    color: #ffffff;
+  }
+  
+  .scroll-stack-card p {
+    color: #cccccc;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .scroll-stack-card {
+    border: 2px solid #000;
+    background: #fff;
+    color: #000;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .scroll-stack-card {
+      border: 2px solid #fff;
+      background: #000;
+      color: #fff;
+    }
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-stack-card {
+    transition: none;
+  }
+  
+  .scroll-stack-scroller {
+    scroll-behavior: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  .scroll-stack-scroller {
+    height: auto;
+    overflow: visible;
+  }
+  
+  .scroll-stack-card {
+    transform: none !important;
+    filter: none !important;
+    position: static;
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .scroll-stack-end {
+    display: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.scroll-stack-card:focus-within {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar for webkit browsers */
+.scroll-stack-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-stack-scroller {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animation for initial load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-stack-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.scroll-stack-card:nth-child(1) { animation-delay: 0ms; }
+.scroll-stack-card:nth-child(2) { animation-delay: 100ms; }
+.scroll-stack-card:nth-child(3) { animation-delay: 200ms; }
+.scroll-stack-card:nth-child(4) { animation-delay: 300ms; }
+.scroll-stack-card:nth-child(5) { animation-delay: 400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-stack-card {
+    animation: none;
+  }
+}

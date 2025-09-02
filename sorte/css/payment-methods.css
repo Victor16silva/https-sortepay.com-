@@ -1,0 +1,340 @@
+/* Enhanced Payment Methods Cards */
+.payment-methods {
+    background: #000;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ensure navbar stays visible */
+.navbar {
+    z-index: 9999 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+/* Fix navbar visibility issues */
+body {
+    padding-top: 0 !important;
+}
+
+/* Logo visibility fix */
+.logo, .brand {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.mobile-menu-toggle {
+    z-index: 10000 !important;
+}
+
+.payment-methods .container {
+    max-width: 100%;
+    padding: 0;
+}
+
+.payment-header {
+    position: relative;
+    background: transparent;
+    padding: 100px 0 20px 0;
+    z-index: 10;
+}
+
+.payment-header .header-content {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.payment-header .section-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.payment-header h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 10px 0 5px 0;
+}
+
+.payment-header .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Payment Panel Cards Enhanced Styles */
+.payment-panel-card {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0 !important;
+}
+
+.payment-panel-card .panel-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.payment-panel-card .bg-gradient {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    opacity: 0.9;
+    transition: all 1s ease;
+}
+
+.payment-panel-card .panel-inner {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    width: 100%;
+    padding: 80px 40px 40px;
+    text-align: center;
+}
+
+.payment-panel-card .panel-header {
+    margin-bottom: 60px;
+}
+
+.payment-panel-card .panel-number {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.payment-panel-card .panel-icon {
+    font-size: 4.5rem;
+    margin: 20px 0;
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.payment-panel-card .panel-title {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    margin: 20px 0;
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.03em;
+    background: linear-gradient(45deg, #ffffff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.payment-panel-card .panel-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.payment-panel-card .panel-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+/* Enhanced Feature Cards */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-card, .flow-step, .bank-node, .provider-card, .crypto-card, .global-feature, .ai-metric {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before, .flow-step::before, .bank-node::before, 
+.provider-card::before, .crypto-card::before, .global-feature::before, .ai-metric::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.feature-card:hover, .flow-step:hover, .bank-node:hover, 
+.provider-card:hover, .crypto-card:hover, .global-feature:hover, .ai-metric:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card:hover::before, .flow-step:hover::before, .bank-node:hover::before, 
+.provider-card:hover::before, .crypto-card:hover::before, .global-feature:hover::before, .ai-metric:hover::before {
+    opacity: 1;
+}
+
+.feature-card h4, .flow-step h4, .bank-node h4, 
+.provider-card h4, .crypto-card h4, .global-feature h4, .ai-metric h4 {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card p, .flow-step p, .bank-node p, 
+.provider-card p, .crypto-card p, .global-feature p, .ai-metric p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Layout Variations */
+.token-flow, .bank-connections, .provider-logos, .crypto-types, .global-features {
+    display: grid;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.bank-connections {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.provider-logos, .crypto-types {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.global-features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.token-flow {
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+.flow-arrow {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* Hover Effects for Payment Panels */
+.payment-panel-card:hover .bg-gradient {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.payment-panel-card:hover .panel-icon {
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Ensure navbar is visible on mobile */
+    .navbar {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .payment-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .payment-header .section-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .payment-panel-card .panel-inner {
+        padding: 100px 20px 40px;
+    }
+    
+    .payment-panel-card .panel-title {
+        font-size: 2.5rem;
+    }
+    
+    .payment-panel-card .panel-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .payment-panel-card .panel-icon {
+        font-size: 3rem;
+    }
+    
+    .feature-grid, .provider-logos, .crypto-types {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .bank-connections, .global-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .token-flow {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+}
